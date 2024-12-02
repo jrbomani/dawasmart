@@ -1,0 +1,32 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100">
+    <ActionBar title="Add Symptom" class="bg-purple-600">
+        <NavigationButton text="Back" />
+    </ActionBar>
+
+    <ScrollView>
+        <StackLayout class="p-4">
+            <!-- Symptom Name -->
+            <Label text="Symptom Name" class="text-gray-700 font-semibold mb-1" />
+            <TextField text="{{ name }}" hint="Enter symptom name" class="p-4 bg-white rounded mb-4" />
+
+            <!-- Severity Slider -->
+            <Label text="Severity ({{ severity }})" class="text-gray-700 font-semibold mb-1" />
+            <Slider value="{{ severity }}" minValue="1" maxValue="10" class="mb-4" />
+
+            <!-- Location -->
+            <Label text="Location" class="text-gray-700 font-semibold mb-1" />
+            <TextField text="{{ location }}" hint="Where on your body?" class="p-4 bg-white rounded mb-4" />
+
+            <!-- Description -->
+            <Label text="Description" class="text-gray-700 font-semibold mb-1" />
+            <TextView text="{{ description }}" hint="Describe your symptoms" class="p-4 bg-white rounded mb-4" height="100" />
+
+            <!-- Triggers -->
+            <Label text="Triggers (comma-separated)" class="text-gray-700 font-semibold mb-1" />
+            <TextField text="{{ triggersText }}" hint="What might have caused this?" class="p-4 bg-white rounded mb-4" />
+
+            <!-- Save Button -->
+            <Button text="Save Symptom" tap="{{ onSave }}" class="bg-purple-600 text-white p-4 rounded-lg" />
+        </StackLayout>
+    </ScrollView>
+</Page>

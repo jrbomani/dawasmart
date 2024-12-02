@@ -1,0 +1,19 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Body Map" class="bg-purple-600">
+        <NavigationButton text="Back" />
+    </ActionBar>
+    
+    <GridLayout rows="*, auto">
+        <!-- Body Map Image with Tap Detection -->
+        <Image src="~/assets/body-map.png" row="0" tap="{{ onBodyTap }}" class="w-full h-full" />
+        
+        <!-- Selected Area Information -->
+        <StackLayout row="1" class="p-4 bg-white border-t border-gray-200">
+            <Label text="{{ selectedArea }}" class="text-lg font-bold text-purple-600" />
+            <Label text="{{ symptomsCount }}" class="text-gray-600" />
+            <Button text="Add Symptom Here" tap="{{ onAddSymptomHere }}" 
+                    class="bg-purple-600 text-white p-3 rounded-lg mt-2" 
+                    visibility="{{ selectedArea ? 'visible' : 'collapsed' }}" />
+        </StackLayout>
+    </GridLayout>
+</Page>

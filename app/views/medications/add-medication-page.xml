@@ -1,0 +1,36 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Add Medication" class="bg-purple-600">
+        <NavigationButton text="Back" />
+    </ActionBar>
+
+    <ScrollView>
+        <StackLayout class="p-4">
+            <!-- Medication Name -->
+            <Label text="Medication Name" class="text-gray-700 font-semibold mb-1" />
+            <TextField text="{{ name }}" hint="Enter medication name" class="p-4 bg-white rounded mb-4" />
+
+            <!-- Dosage -->
+            <Label text="Dosage" class="text-gray-700 font-semibold mb-1" />
+            <TextField text="{{ dosage }}" hint="e.g., 500mg" class="p-4 bg-white rounded mb-4" />
+
+            <!-- Frequency -->
+            <Label text="Frequency" class="text-gray-700 font-semibold mb-1" />
+            <TextField text="{{ frequency }}" hint="e.g., Twice daily" class="p-4 bg-white rounded mb-4" />
+
+            <!-- Time of Day -->
+            <Label text="Time of Day" class="text-gray-700 font-semibold mb-1" />
+            <GridLayout columns="*, *, *" class="mb-4">
+                <CheckBox col="0" text="Morning" checked="{{ morning }}" />
+                <CheckBox col="1" text="Afternoon" checked="{{ afternoon }}" />
+                <CheckBox col="2" text="Evening" checked="{{ evening }}" />
+            </GridLayout>
+
+            <!-- Notes -->
+            <Label text="Notes" class="text-gray-700 font-semibold mb-1" />
+            <TextView text="{{ notes }}" hint="Additional instructions" class="p-4 bg-white rounded mb-4" height="100" />
+
+            <!-- Save Button -->
+            <Button text="Save Medication" tap="{{ onSave }}" class="bg-purple-600 text-white p-4 rounded-lg" />
+        </StackLayout>
+    </ScrollView>
+</Page>
